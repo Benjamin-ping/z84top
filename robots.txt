@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://z84.top/sitemap.xml
