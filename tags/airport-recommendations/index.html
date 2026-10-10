@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="default">
+<html lang="zh-CN" data-theme="mahu-qinglv">
 
 <head>
 <meta charset="utf-8">
@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://z84.top/assets/theme/style.css">
 <link rel="stylesheet" href="https://z84.top/assets/theme/advertisements.css">
 <link rel="stylesheet" href="https://z84.top/assets/theme/search.css"><script defer src="https://z84.top/assets/theme/search.js"></script>
-
+<link rel="stylesheet" href="https://z84.top/assets/theme/mahu.css">
 <link rel="stylesheet" href="https://z84.top/assets/theme/viewer.css">
 <link rel="stylesheet" href="https://z84.top/assets/theme/reader.css">
 <link rel="icon" href="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png">
@@ -37,7 +37,7 @@
 <script defer src="https://z84.top/assets/theme/image-viewer.js"></script>
 
 <script defer src="https://z84.top/assets/theme/interactions.js"></script>
-
+<script defer src="https://z84.top/assets/theme/mahu.js"></script>
 
 
 </head>
@@ -49,8 +49,28 @@
 <header class="site-header">
 <div class="header-inner">
 <a class="brand" href="https://z84.top/"><img src="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png" alt="" width="38" height="38"><span>Mahu的AI研究站</span></a>
-<nav id="site-navigation" aria-label="站点导航"><a href="https://z84.top/">首页</a><a href="https://z84.top/categories/ai-guides/">AI教程</a><a href="https://z84.top/categories/ai-billing/">充值订阅</a><a href="https://z84.top/categories/free-ai/">免费资源</a><a href="https://z84.top/categories/ai-account/">账号安全</a><a href="https://z84.top/categories/ai-api/">API开发</a><a href="https://z84.top/categories/ai-tools/">工具推荐</a></nav>
-<a class="search-toggle" href="https://z84.top/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+
+
+
+
+<nav id="site-navigation" aria-label="站点导航">
+<a href="https://z84.top/">首页</a>
+
+
+<a href="https://z84.top/categories/ai-guides/">AI教程</a>
+
+
+<a href="https://z84.top/categories/free-ai/">免费资源</a>
+
+<details class="nav-group"><summary>订阅与账号 <span aria-hidden="true">⌄</span></summary><div class="nav-group-links">
+<a href="https://z84.top/categories/ai-billing/">充值订阅</a><a href="https://z84.top/categories/ai-account/">账号安全</a>
+</div></details>
+<details class="nav-group"><summary>开发与工具 <span aria-hidden="true">⌄</span></summary><div class="nav-group-links">
+<a href="https://z84.top/categories/ai-api/">API开发</a><a href="https://z84.top/categories/ai-tools/">工具推荐</a>
+<a href="https://z84.top/posts/airport-recommendations-2026/">网络服务选购</a>
+</div></details>
+</nav>
+<a class="search-toggle" href="https://z84.top/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="search-label">搜索</span></a>
 <button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
 <svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
 <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
@@ -80,7 +100,8 @@
 <section class="article-list" aria-label="文章列表">
 <article class="article-card">
 <span class="card-index" aria-hidden="true"></span>
-<h2><a href="https://z84.top/posts/airport-recommendations-2026/">2026年机场推荐：9款高性价比机场对比，适合AI新手的网络服务选择指南</a></h2>
+
+<h2><a href="https://z84.top/posts/airport-recommendations-2026/">2026年机场推荐：9款高性价比机场对比，适合AI新手的网络服务选择指南</a><span class="pinned">置顶</span></h2>
 <p class="card-summary">2026年机场推荐：9款高性价比机场对比，AI新手必看的选购指南 更新日期：2026年10月10日 想使用 ChatGPT、Claude、Gemini、Cursor 等热门 AI  工具，却经常被网络连接问题困扰？ 对于刚接触 AI 的新手来说，最让人头疼的事情往往不是 AI  太难用，而是网页加载失败、连接中断、请求超时，或者不知道应该如何选择合适的网络服…</p>
 <div class="card-footer"><span><span>mahu</span><time datetime="2026-10-10T13:44:06&#43;08:00">2026-10-10</time><a class="card-category" href="https://z84.top/categories/ai-tools/">工具推荐</a></span><a class="read-more" href="https://z84.top/posts/airport-recommendations-2026/" aria-label="阅读2026年机场推荐：9款高性价比机场对比，适合AI新手的网络服务选择指南">阅读全文 <span aria-hidden="true">↗</span></a></div>
 </article>
