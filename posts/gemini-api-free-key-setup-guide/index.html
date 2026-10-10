@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="default">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemini API免费申请教程：获取API Key、首次调用与额度排查 · Mahu的AI研究站</title>
+<meta name="description" content="Gemini API免费申请与配置教程，带你获取API Key、检查模型免费层、设置环境变量并完成Python首次调用，同时说明429报错、额度限制与密钥保护方法。">
+<meta name="keywords" content="Gemini API,免费API,Gemini API Key,Gemini免费额度,Google AI Studio教程">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://z84.top/posts/gemini-api-free-key-setup-guide/">
+<meta property="og:title" content="Gemini API免费申请教程：获取API Key、首次调用与额度排查">
+<meta property="og:description" content="Gemini API免费申请与配置教程，带你获取API Key、检查模型免费层、设置环境变量并完成Python首次调用，同时说明429报错、额度限制与密钥保护方法。">
+<meta property="og:url" content="https://z84.top/posts/gemini-api-free-key-setup-guide/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mahu的AI研究站">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png"><meta property="og:image:alt" content="Mahu的AI研究站">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gemini API免费申请教程：获取API Key、首次调用与额度排查">
+<meta name="twitter:description" content="Gemini API免费申请与配置教程，带你获取API Key、检查模型免费层、设置环境变量并完成Python首次调用，同时说明429报错、额度限制与密钥保护方法。">
+<meta name="twitter:image" content="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png">
+<meta name="author" content="mahu"><meta property="article:published_time" content="2026-10-10T14:45:34&#43;08:00"><meta property="article:modified_time" content="2026-10-10T14:47:38&#43;08:00"><meta property="article:tag" content="Gemini"><meta property="article:tag" content="免费API"><meta property="article:tag" content="API Key"><meta property="article:tag" content="新手入门">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://z84.top/posts/gemini-api-free-key-setup-guide/#article","@type":"BlogPosting","author":{"@type":"Person","name":"mahu"},"dateModified":"2026-10-10T14:47:38+08:00","datePublished":"2026-10-10T14:45:34+08:00","description":"Gemini API免费申请与配置教程，带你获取API Key、检查模型免费层、设置环境变量并完成Python首次调用，同时说明429报错、额度限制与密钥保护方法。","headline":"Gemini API免费申请教程：获取API Key、首次调用与额度排查","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://z84.top/posts/gemini-api-free-key-setup-guide/","@type":"WebPage"},"url":"https://z84.top/posts/gemini-api-free-key-setup-guide/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://z84.top/","name":"Mahu的AI研究站","position":1},{"@type":"ListItem","item":"https://z84.top/posts/gemini-api-free-key-setup-guide/","name":"Gemini API免费申请教程：获取API Key、首次调用与额度排查","position":2}]}]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://z84.top/assets/theme/style.css">
+<link rel="stylesheet" href="https://z84.top/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://z84.top/assets/theme/search.css"><script defer src="https://z84.top/assets/theme/search.js"></script>
+
+<link rel="stylesheet" href="https://z84.top/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://z84.top/assets/theme/reader.css">
+<link rel="icon" href="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png">
+<link rel="stylesheet" href="https://z84.top/assets/theme/artalk.css"><script defer src="https://z84.top/assets/theme/artalk.js"></script>
+<script defer src="https://z84.top/assets/theme/theme.js"></script>
+<script defer src="https://z84.top/assets/theme/reader.js"></script>
+<script defer src="https://z84.top/assets/theme/viewer.js"></script>
+<script defer src="https://z84.top/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://z84.top/assets/theme/interactions.js"></script>
+
+
+
+</head>
+
+<body class="reader-page article-page">
+
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://z84.top/"><img src="https://z84.top/assets/media/024de967-af67-4ac8-bb6e-85e1b1eba7fa.png" alt="" width="38" height="38"><span>Mahu的AI研究站</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://z84.top/">首页</a><a href="https://z84.top/categories/ai-guides/">AI教程</a><a href="https://z84.top/categories/ai-billing/">充值订阅</a><a href="https://z84.top/categories/free-ai/">免费资源</a><a href="https://z84.top/categories/ai-account/">账号安全</a><a href="https://z84.top/categories/ai-api/">API开发</a><a href="https://z84.top/categories/ai-tools/">工具推荐</a></nav>
+<a class="search-toggle" href="https://z84.top/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://z84.top/">Mahu的AI研究站</a></li><li><span aria-current="page">Gemini API免费申请教程：获取API Key、首次调用与额度排查</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章</div>
+<h1 data-pagefind-meta="title">Gemini API免费申请教程：获取API Key、首次调用与额度排查</h1>
+<div class="metadata" data-pagefind-ignore><span>mahu</span><time datetime="2026-10-10T14:45:34&#43;08:00">2026-10-10</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://z84.top/categories/free-ai/">免费资源</a></div>
+</header>
+<div class="prose"><p><strong>资料核对：2026年10月10日｜适用于希望学习API接入的新手</strong></p>
+<p>Gemini API免费申请的基本流程是：确认Google AI Studio可用资格，建立项目和API Key，选择当前提供免费层的模型，再发一个很小的测试请求。免费额度适合学习和小型验证，不等于所有模型、所有功能都免费。</p>
+<p>本篇带你从密钥创建走到第一条文字回复，并解释申请成功却无法调用时该检查什么。你不需要先做一个完整网站，也不要一开始提交大批文件。</p>
+<p><img src="https://z84.top/assets/media/70b30635-d579-4f2c-acaa-2623e2cd0aa4.png" alt="Gemini API申请流程：检查资格、创建密钥、最小请求、查看用量"></p>
+<p><em>本站原创流程示意图，并非Google AI Studio截图。</em></p>
+<h2 id="geminiai-studioapi">先分清Gemini应用、AI Studio和API</h2>
+<p>Gemini应用用于直接聊天，AI Studio用于开发与测试，API用于程序调用。应用中的付费订阅、开发项目的账单和模型免费层，需要分别查看。</p>
+<p>申请前打开<a href="https://aistudio.google.com/">Google AI Studio</a>，并检查<a href="https://ai.google.dev/gemini-api/docs/available-regions">官方支持地区说明</a>。如果页面提示所在地、年龄或账户条件不满足，先按官方资格要求处理。网络能打开页面，并不等于账户符合API使用资格。</p>
+<h2 id="api-key">第一步：创建项目和API Key</h2>
+<p>在AI Studio中找到API密钥管理入口。选择现有项目或按提示新建项目，再创建密钥。项目可以理解为把调用、权限和用量归在一起的工作空间；新手使用一个专门的测试项目，更容易看清用量。</p>
+<p>记录项目名称和用途，把密钥存放到自己的凭据管理工具。不要复制进公开笔记、网页代码或截图。申请流程与环境变量名称见<a href="https://ai.google.dev/gemini-api/docs/api-key">官方密钥文档</a>。</p>
+<p>如果项目列表为空，检查当前Google账号、项目访问权限和页面提示。不要因为第一次看不到项目就连续创建多个账号，这只会让后续账单与权限更难排查。</p>
+<h2 id="heading">第二步：确认你选的模型确实有免费层</h2>
+<p>打开<a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API价格页面</a>，检查所选模型的免费层栏，以及文字、图片、搜索等功能是否分别收费。记录模型ID，后面代码里的名称必须与它对应。</p>
+<p>即使是同一模型，不同功能也可能有不同计费规则。第一次练习只发送短文本，不启用搜索、图片生成等额外工具。免费层的数据使用规则也应一起查看，测试材料使用公开或虚构内容，不上传敏感业务数据。</p>
+<p>截至核对日期，官方快速入门以<code>gemini-3.8-flash</code>演示文字调用，价格页列出了该模型的免费层。你的项目能否使用、具体额度多少，以当前控制台为准。如果型号发生调整，选择价格页仍提供免费层、且项目可以使用的型号。</p>
+<h2 id="heading-1">第三步：在终端配置密钥和模型</h2>
+<p>以下使用Python与官方<code>google-genai</code>库。先安装Python，在终端确认能够执行<code>python --version</code>，然后安装：</p>
+<pre><code class="language-text">python -m pip install -U google-genai
+</code></pre>
+<p>Windows用户可以在PowerShell里无回显输入密钥，避免把完整密钥写进命令历史：</p>
+<pre><code class="language-powershell">$geminiSecret = Read-Host '输入Gemini API Key' -AsSecureString
+$env:GEMINI_API_KEY = [System.Net.NetworkCredential]::new('', $geminiSecret).Password
+Remove-Variable geminiSecret
+$env:GEMINI_MODEL = 'gemini-3.8-flash'
+</code></pre>
+<p>这些设置只作用于当前终端及之后启动的子进程。运行代码时使用同一个终端；新开窗口后若提示找不到变量，需要重新配置。macOS或Linux也可使用终端的环境变量功能，具体写法见<a href="https://ai.google.dev/gemini-api/docs/api-key">官方环境变量说明</a>。</p>
+<p>若同时存在<code>GOOGLE_API_KEY</code>，官方库自动读取时有优先顺序。下方代码明确从<code>GEMINI_API_KEY</code>读取，减少选错密钥的可能。</p>
+<h2 id="heading-2">第四步：完成一条最小请求</h2>
+<p>新建<code>gemini_test.py</code>，保存为UTF-8，写入以下代码：</p>
+<pre><code class="language-python">import os
+from google import genai
+
+api_key = os.environ[&quot;GEMINI_API_KEY&quot;]
+model_id = os.environ[&quot;GEMINI_MODEL&quot;]
+client = genai.Client(api_key=api_key)
+
+reply = client.interactions.create(
+    model=model_id,
+    input=&quot;请用简体中文、三句话解释什么是API。&quot;
+)
+print(reply.output_text)
+</code></pre>
+<p>在同一个终端执行：</p>
+<pre><code class="language-text">python gemini_test.py
+</code></pre>
+<p>看到可读的中文回复，说明这次请求完成。此示例按<a href="https://ai.google.dev/gemini-api/docs/get-started">官方快速入门</a>中的Interactions接口组织；旧教程可能使用其他方法，复制时不要把不同接口的参数混在一起。本文没有替你执行付费或远程模型请求，实际结果以你的控制台为准。</p>
+<p>第一次成功后，先去用量页面检查所选项目、模型和请求记录，再尝试把输入改成一小段公开资料。不要马上启动循环或一次处理几百条任务。</p>
+<h2 id="heading-3">免费额度如何看？</h2>
+<p>常见限制包括每分钟请求数、每分钟输入Token数和每日请求数。Token是模型处理文字等内容的计量单位，并不等于一个汉字。相同请求次数下，发送整本书可能比短句更快碰到限制。</p>
+<p>官方<a href="https://ai.google.dev/gemini-api/docs/rate-limits">速率限制说明</a>指出，限制按项目应用，不是每把密钥都独立获得一份额度。给同一个项目再建一把Key，并不能解决项目额度耗尽。</p>
+<p>做批量练习时先串行调用，把输入压缩到必要内容，保存已成功的结果；失败任务单独记录，避免整批重新跑。</p>
+<h2 id="heading-4">申请后报错，按这个表排查</h2>
+<table>
+<thead>
+<tr>
+<th>提示或现象</th>
+<th>重点检查</th>
+<th>下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>找不到<code>GEMINI_API_KEY</code></td>
+<td>是否在同一终端运行</td>
+<td>配置变量，不要打印完整密钥</td>
+</tr>
+<tr>
+<td>模型不存在或不可用</td>
+<td>模型ID、账户和项目权限</td>
+<td>从当前模型文档选择可用型号</td>
+</tr>
+<tr>
+<td>429或额度耗尽</td>
+<td>每分钟与每日限制、项目用量</td>
+<td>降低频率，查看对应恢复条件</td>
+</tr>
+<tr>
+<td>权限或地区错误</td>
+<td>官方支持条件及项目设置</td>
+<td>按错误原因处理，不能靠重试解决</td>
+</tr>
+<tr>
+<td>请求超时</td>
+<td>服务状态、DNS与终端网络</td>
+<td>用一条短请求排查连接</td>
+</tr>
+</tbody>
+</table>
+<p>更完整的错误定位方法可以看<a href="/posts/ai-api-401-429-timeout-troubleshooting/">AI API报错排查指南</a>。</p>
+<p>如果你已经满足服务使用条件，却确认本地连接经常中断，可以参考本站<a href="/posts/airport-recommendations-2026/">机场推荐与网络服务选购指南</a>比较试用和客户端支持。先验证终端中的请求稳定性，再考虑购买；网络套餐不能扩大免费额度。</p>
+<h2 id="heading-5">常见问题</h2>
+<h3 id="gemini-api">Gemini API免费额度会一直不变吗？</h3>
+<p>不会作这样的保证。模型、项目资格和免费层限制可能调整，保存控制台与价格页入口，比记住一张旧额度表更实用。</p>
+<h3 id="api-key-1">有API Key就一定能免费调用吗？</h3>
+<p>不一定。还要看模型、功能、项目计费状态和额度。密钥是身份凭据，不能替代计费条件检查。</p>
+<h3 id="key">能把Key填进第三方聊天工具吗？</h3>
+<p>先确认工具可信、密钥保存方式和请求发往哪个地址。不要把官方密钥交给不明中转服务；公开发布的前端页面也不应包含密钥。</p>
+<h3 id="heading-6">免费额度不够，还有什么选择？</h3>
+<p>学习和小型测试可以比较<a href="/posts/free-ai-api-gemini-openrouter-ollama/">Gemini、OpenRouter与Ollama三条路线</a>。如果任务要求稳定响应，需把限额、数据处理和运维成本一起纳入预算。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://z84.top/tags/gemini/"># Gemini</a><a href="https://z84.top/tags/free-api/"># 免费API</a><a href="https://z84.top/tags/api-key/"># API Key</a><a href="https://z84.top/tags/beginner/"># 新手入门</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://z84.top/posts/free-ai-api-gemini-openrouter-ollama/">← 上一篇</a><a href="https://z84.top/posts/chatgpt-cancel-subscription-refund-guide/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#geminiai-studioapi">先分清Gemini应用、AI Studio和API</a><a class="level-2" href="#api-key">第一步：创建项目和API Key</a><a class="level-2" href="#heading">第二步：确认你选的模型确实有免费层</a><a class="level-2" href="#heading-1">第三步：在终端配置密钥和模型</a><a class="level-2" href="#heading-2">第四步：完成一条最小请求</a><a class="level-2" href="#heading-3">免费额度如何看？</a><a class="level-2" href="#heading-4">申请后报错，按这个表排查</a><a class="level-2" href="#heading-5">常见问题</a><a class="level-3" href="#gemini-api">Gemini API免费额度会一直不变吗？</a><a class="level-3" href="#api-key-1">有API Key就一定能免费调用吗？</a><a class="level-3" href="#key">能把Key填进第三方聊天工具吗？</a><a class="level-3" href="#heading-6">免费额度不够，还有什么选择？</a></nav></aside>
+</div>
+
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer">
+
+<span>© 2026 Mahu的AI研究站 · 专注AI教程与实用资源分享 · All Rights Reserved.</span>
+</footer>
+
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://z84.top/pagefind/pagefind-component-ui.js" data-stylesheet="https://z84.top/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://z84.top/pagefind/" base-url="https://z84.top/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/10b4fd29-30bb-47e2-a386-5baa3dcb3e67/","pageTitle":"Gemini API免费申请教程：获取API Key、首次调用与额度排查","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-305fa3d9-caf6-43fc-b24e-74ae0fc9dd5f","views":true,"viewsBase":0}</script>
+
+</body>
+</html>
